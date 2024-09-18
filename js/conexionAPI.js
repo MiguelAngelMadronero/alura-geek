@@ -1,5 +1,5 @@
 async function listarProductos(){
-    const conexion= await fetch("https://json-vercel-eta.vercel.app/productos");
+    const conexion= await fetch("https://db-alura-geek.onrender.com/api/productos/");
 
     const conexionConvertida= conexion.json();
 
@@ -8,7 +8,7 @@ async function listarProductos(){
 }
 
 async function enviarProducto(nombre, precio, img){
-    const conexion= await fetch("https://json-vercel-eta.vercel.app/productos", {
+    const conexion= await fetch("https://db-alura-geek.onrender.com/api/productos/", {
         method: "POST",
         headers: {"Content-type" : "application/json"},
         body: JSON.stringify({
@@ -29,7 +29,7 @@ async function enviarProducto(nombre, precio, img){
 }
 
 async function eliminarProducto(id){
-    const conexion= await fetch(`https://json-vercel-eta.vercel.app/productos/${id}`, {
+    const conexion= await fetch(`https://db-alura-geek.onrender.com/api/productos//${id}`, {
         method: "DELETE"
     });
 
